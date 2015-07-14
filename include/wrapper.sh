@@ -3,7 +3,7 @@
 # Generates the default exhibitor config and launches exhibitor
 
 MISSING_VAR_MESSAGE="must be set"
-DEFAULT_AWS_REGION="us-west-2"
+DEFAULT_AWS_REGION="eu-west-1"
 DEFAULT_DATA_DIR="/opt/zookeeper/snapshots"
 DEFAULT_LOG_DIR="/opt/zookeeper/transactions"
 S3_SECURITY=""
