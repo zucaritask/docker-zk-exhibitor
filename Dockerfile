@@ -41,6 +41,6 @@ ADD include/web.xml /opt/exhibitor/web.xml
 
 USER root
 WORKDIR /opt/exhibitor
-EXPOSE 2181 2888 3888 8181
+EXPOSE 2181 2888 3888 8181 8250
 
 ENTRYPOINT ["bash", "-ex", "/opt/exhibitor/wrapper.sh"]
