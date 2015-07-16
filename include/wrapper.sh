@@ -34,6 +34,7 @@ cat <<- EOF > /opt/exhibitor/defaults.conf
 	zoo-cfg-extra=tickTime\=2000&initLimit\=10&syncLimit\=5&quorumListenOnAllIPs\=true
 	auto-manage-instances-settling-period-ms=0
 	auto-manage-instances=1
+  java-environment=export SERVER_JVMFLAGS\="\$SERVER_JVMFLAGS -Dcom.sun.management.jmxremote.authenticate\=false"\nexport SERVER_JVMFLAGS\="\$SERVER_JVMFLAGS -Dcom.sun.management.jmxremote.ssl\=false"\nexport SERVER_JVMFLAGS\="\$SERVER_JVMFLAGS -Dcom.sun.management.jmxremote.port\=8250"\n export SERVER_JVMFLAGS="\$SERVER_JVMFLAGS -Dcom.sun.management.jmxremote.rmi.port\=8250"\n export SERVER_JVMFLAGS="\$SERVER_JVMFLAGS -Djava.rmi.server.hostname\=\`hostname -i\`"
 EOF
 
 
@@ -84,6 +85,7 @@ exec 2>&1
 
 java -jar /opt/exhibitor/exhibitor.jar \
   --port 8181 --defaultconfig /opt/exhibitor/defaults.conf \
+  --servo true \
   ${BACKUP_CONFIG} \
   ${HTTP_PROXY} \
   --hostname ${HOSTNAME} \
