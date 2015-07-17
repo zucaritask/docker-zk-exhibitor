@@ -13,7 +13,7 @@ RUN \
     # Install dependencies
     apt-get update \
     && apt-get install -y --allow-unauthenticated --no-install-recommends $BUILD_DEPS \
-
+    && update-java-alternatives -s java-1.7.0-openjdk-amd64 \
     # Default DNS cache TTL is -1. DNS records, like, change, man.
     && grep '^networkaddress.cache.ttl=' /etc/java-7-openjdk/security/java.security || echo 'networkaddress.cache.ttl=60' >> /etc/java-7-openjdk/security/java.security \
 
