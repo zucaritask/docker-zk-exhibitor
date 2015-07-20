@@ -1,4 +1,4 @@
-*Note*: Fork of mbabineau/docker-zk-exhibitor to accomodate for our needs
+### *Note*: Fork of mbabineau/docker-zk-exhibitor to accomodate for our needs
   - Default s3backups disabled
   - ZK JMX monitoring port 8250
   - Default AWS region eu-west-1
@@ -7,7 +7,7 @@ Runs an [Exhibitor](https://github.com/Netflix/exhibitor)-managed [ZooKeeper](ht
 
 Available on the Docker Index as [zucaritask/docker-zk-exhibitor](https://index.docker.io/u/zucaritask/docker-zk-exhibitor/):
 
-    docker pull mbabineau/zookeeper-exhibitor
+    docker pull zucaritask/docker-zk-exhibitor
 
 ### Versions
 * Exhibitor 1.5.5
